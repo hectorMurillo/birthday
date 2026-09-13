@@ -54,7 +54,7 @@ export default function PhotosCarousel() {
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{ 
                 opacity: 1, 
-                scale: isTop ? 1 : 1 - (cards.length - 1 - i) * 0.05, 
+                scale: isTop ? 1 : 1 - (cards.length - 1 - i) * 0.04, 
                 y: photo.y + (cards.length - 1 - i) * 15,
                 rotate: photo.rot,
               }}
