@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-cream: #FFF5F6; /* Soft pinkish white */
+    --text-brown: #8C4A57; /* Warm rose brown */
+    --accent-red: #E27B8E; /* Cute romantic pink/red */
+    --envelope-bg: #F7DADD; /* Cute pink envelope */
+    --envelope-flap: #EFCDD1; /* Flap slightly darker */
+    --bar-bg: #FCE8EA;
+    --bar-fill: #E27B8E;
+  }
+  
+  body {
+    background-color: var(--bg-cream);
+    color: var(--text-brown);
+    font-family: 'Lora', serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+}

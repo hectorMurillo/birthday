@@ -1,0 +1,6 @@
+{
+  "name": "Sorpresa de Cumpleaños",
+  "description": "Una experiencia interactiva de cumpleaños con fotos, carta y confeti.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-cream: #FAF6ED;
+    --text-brown: #8E5A47;
+    --accent-red: #A42424;
+    --envelope-bg: #EEDABB;
+    --envelope-flap: #E1CBA7;
+    --bar-bg: #EEDABB;
+    --bar-fill: #D38661;
+  }
+  
+  body {
+    background-color: var(--bg-cream);
+    color: var(--text-brown);
+    font-family: 'Lora', serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+}
