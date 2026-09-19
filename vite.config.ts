@@ -6,6 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(() => {
   return {
+    base: '/canva-qr/', // <-- AQUÍ SE AGREGA LA RUTA BASE
     plugins: [
       react(),
       tailwindcss(),
@@ -27,7 +28,7 @@ export default defineConfig(() => {
           'foto8.webp',
         ],
         manifest: {
-          id: '/',
+          id: '/canva-qr/', // <-- ACTUALIZADO
           name: 'Para Paola',
           short_name: 'Paola',
           description: 'Una sorpresa especial de cumpleaños hecha con mucho amor.',
@@ -35,23 +36,23 @@ export default defineConfig(() => {
           background_color: '#FFF5F6',
           display: 'standalone',
           orientation: 'portrait',
-          start_url: '/',
-          scope: '/',
+          start_url: '/canva-qr/', // <-- ACTUALIZADO
+          scope: '/canva-qr/', // <-- ACTUALIZADO
           icons: [
             {
-              src: '/pwa-192x192.png',
+              src: 'pwa-192x192.png', // Quitamos la barra inicial para evitar 404
               sizes: '192x192',
               type: 'image/png',
               purpose: 'any',
             },
             {
-              src: '/pwa-512x512.png',
+              src: 'pwa-512x512.png', // Quitamos la barra inicial
               sizes: '512x512',
               type: 'image/png',
               purpose: 'any',
             },
             {
-              src: '/pwa-maskable-512x512.png',
+              src: 'pwa-maskable-512x512.png', // Quitamos la barra inicial
               sizes: '512x512',
               type: 'image/png',
               purpose: 'maskable',
@@ -75,7 +76,7 @@ export default defineConfig(() => {
     },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
+      // Do not modify—file watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
       // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
