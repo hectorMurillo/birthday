@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import IntroStage from './components/IntroStage';
 import MainStage from './components/MainStage';
+import { PWAInstallButton } from './components/PWAInstallButton';
 import { AnimatePresence, motion } from 'motion/react';
 
 export default function App() {
@@ -15,12 +16,19 @@ export default function App() {
   }, []);
 
   const handleFirstTouch = () => {
+    // If supported, request fullscreen to hide browser bars
+    if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen().catch(() => {
+        // Silently catch if not allowed (e.g. inside iframe)
+      });
+    }
+
     if (audio1Ref.current && audio1Ref.current.paused) {
-        audio1Ref.current.volume = 1.0; 
-        const playPromise = audio1Ref.current.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(e => console.log('Audio1 play failed:', e));
-        }
+      audio1Ref.current.volume = 1.0; 
+      const playPromise = audio1Ref.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(e => console.log('Audio1 play failed:', e));
+      }
     }
   };
 
@@ -30,20 +38,22 @@ export default function App() {
 
   const handleOpenLetter = () => {
     if (audio1Ref.current) {
-        audio1Ref.current.pause();
+      audio1Ref.current.pause();
     }
     if (audio2Ref.current) {
-        audio2Ref.current.volume = 1.0;
-        audio2Ref.current.currentTime = 0;
-        const playPromise = audio2Ref.current.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(e => console.log('Audio2 play failed:', e));
-        }
+      audio2Ref.current.volume = 1.0;
+      audio2Ref.current.currentTime = 0;
+      const playPromise = audio2Ref.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(e => console.log('Audio2 play failed:', e));
+      }
     }
   };
 
   return (
     <div className="w-full min-h-[100dvh] relative overflow-hidden bg-[var(--bg-cream)]">
+      <PWAInstallButton />
+
       {/* Include playsInline for better mobile compatibility */}
       <audio ref={audio1Ref} src="/cancion1.mp3" loop preload="auto" playsInline />
       <audio ref={audio2Ref} src="/cancion2.mp3" loop preload="auto" playsInline />

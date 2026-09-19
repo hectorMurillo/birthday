@@ -1,6 +1,6 @@
 {
-  "name": "Sorpresa de Cumpleaños",
-  "description": "Una experiencia interactiva de cumpleaños con fotos, carta y confeti.",
+  "name": "Para Paola",
+  "description": "Una sorpresa especial de cumpleaños con fotos, carta y música.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
