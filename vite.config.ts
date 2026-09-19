@@ -6,7 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(() => {
   return {
-    base: '/canva-qr/', // <-- AQUÍ SE AGREGA LA RUTA BASE
+    base: '/birthday/', // <-- AQUÍ SE AGREGA LA RUTA BASE
     plugins: [
       react(),
       tailwindcss(),
