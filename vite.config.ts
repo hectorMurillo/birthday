@@ -5,8 +5,11 @@ import {defineConfig} from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(() => {
+  const repoName = 'canva-qr'; // Nombre exacto del repositorio en GitHub
+  const basePath = `/${repoName}/`;
+
   return {
-    base: '/birthday/', // <-- AQUÍ SE AGREGA LA RUTA BASE
+    base: basePath,
     plugins: [
       react(),
       tailwindcss(),
@@ -28,7 +31,7 @@ export default defineConfig(() => {
           'foto8.webp',
         ],
         manifest: {
-          id: '/canva-qr/', // <-- ACTUALIZADO
+          id: basePath,
           name: 'Para Paola',
           short_name: 'Paola',
           description: 'Una sorpresa especial de cumpleaños hecha con mucho amor.',
@@ -36,8 +39,8 @@ export default defineConfig(() => {
           background_color: '#FFF5F6',
           display: 'standalone',
           orientation: 'portrait',
-          start_url: '/canva-qr/', // <-- ACTUALIZADO
-          scope: '/canva-qr/', // <-- ACTUALIZADO
+          start_url: basePath,
+          scope: basePath,
           icons: [
             {
               src: 'pwa-192x192.png', // Quitamos la barra inicial para evitar 404

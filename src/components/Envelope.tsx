@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 interface EnvelopeProps {
   isOpen: boolean;
@@ -41,7 +42,7 @@ export default function Envelope({ isOpen, onOpen }: EnvelopeProps) {
         {/* Final photo with phrase */}
         <div className="mt-12 flex flex-col items-center border-t border-[var(--text-brown)]/20 pt-8">
            <div className="w-full aspect-[3/4] bg-gray-200 rounded-sm overflow-hidden shadow-inner mb-4 relative">
-              <img src="/foto1.webp" alt="Final Memory" className="w-full h-full object-cover" />
+              <img src={getAssetUrl('/foto1.webp')} alt="Final Memory" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/10" />
            </div>
            <p className="font-playfair text-[var(--text-brown)] text-center italic text-xl">

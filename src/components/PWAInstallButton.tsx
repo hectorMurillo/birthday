@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { usePWAInstall } from '../hooks/usePWAInstall';
 import { Download, Share, PlusSquare, X, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 export const PWAInstallButton: React.FC = () => {
   const { isInstallable, isInstalled, isIOS, install } = usePWAInstall();
@@ -67,7 +68,7 @@ export const PWAInstallButton: React.FC = () => {
               </button>
 
               <div className="w-12 h-12 rounded-2xl bg-white shadow-md mx-auto flex items-center justify-center mb-3 overflow-hidden border border-[#E27B8E]/20">
-                <img src="/apple-touch-icon.png" alt="Icono de la App" className="w-10 h-10 object-contain rounded-xl" />
+                <img src={getAssetUrl('/apple-touch-icon.png')} alt="Icono de la App" className="w-10 h-10 object-contain rounded-xl" />
               </div>
 
               <h3 className="font-playfair text-lg text-[var(--text-brown)] font-medium mb-1">

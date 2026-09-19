@@ -1,15 +1,16 @@
 import { motion, PanInfo } from 'motion/react';
 import { useState } from 'react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 // We expect the user to upload their photos into the public folder named foto1.jpg, foto2.jpg, etc.
 const initialPhotos = [
-  { id: 7, src: "/foto7.webp", rot: 2, y: -2, phrase: "Tú y yo, siempre." },
-  { id: 6, src: "/foto6.webp", rot: -4, y: 5, phrase: "Mi lugar favorito." },
-  { id: 5, src: "/foto5.webp", rot: 3, y: -1, phrase: "La mejor casualidad." },
-  { id: 4, src: "/foto4.webp", rot: -2, y: 8, phrase: "Me haces tan feliz." },
-  { id: 3, src: "/foto8.webp", rot: 4, y: -5, phrase: "Un amor para toda la vida." },
-  { id: 2, src: "/foto2.webp", rot: -3, y: 0, phrase: "Cada momento es especial." },
-  { id: 1, src: "/foto1.webp", rot: -5, y: 10, phrase: "Eres mi mundo entero." },
+  { id: 7, src: getAssetUrl('/foto7.webp'), rot: 2, y: -2, phrase: "Tú y yo, siempre." },
+  { id: 6, src: getAssetUrl('/foto6.webp'), rot: -4, y: 5, phrase: "Mi lugar favorito." },
+  { id: 5, src: getAssetUrl('/foto5.webp'), rot: 3, y: -1, phrase: "La mejor casualidad." },
+  { id: 4, src: getAssetUrl('/foto4.webp'), rot: -2, y: 8, phrase: "Me haces tan feliz." },
+  { id: 3, src: getAssetUrl('/foto8.webp'), rot: 4, y: -5, phrase: "Un amor para toda la vida." },
+  { id: 2, src: getAssetUrl('/foto2.webp'), rot: -3, y: 0, phrase: "Cada momento es especial." },
+  { id: 1, src: getAssetUrl('/foto1.webp'), rot: -5, y: 10, phrase: "Eres mi mundo entero." },
 ];
 
 export default function PhotosCarousel() {

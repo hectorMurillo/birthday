@@ -3,6 +3,7 @@ import IntroStage from './components/IntroStage';
 import MainStage from './components/MainStage';
 import { PWAInstallButton } from './components/PWAInstallButton';
 import { AnimatePresence, motion } from 'motion/react';
+import { getAssetUrl } from './utils/assetUrl';
 
 export default function App() {
   const [stage, setStage] = useState<'intro' | 'main'>('intro');
@@ -55,8 +56,8 @@ export default function App() {
       <PWAInstallButton />
 
       {/* Include playsInline for better mobile compatibility */}
-      <audio ref={audio1Ref} src="/cancion1.mp3" loop preload="auto" playsInline />
-      <audio ref={audio2Ref} src="/cancion2.mp3" loop preload="auto" playsInline />
+      <audio ref={audio1Ref} src={getAssetUrl('/cancion1.mp3')} loop preload="auto" playsInline />
+      <audio ref={audio2Ref} src={getAssetUrl('/cancion2.mp3')} loop preload="auto" playsInline />
       
       <AnimatePresence mode="wait">
         {stage === 'intro' ? (
