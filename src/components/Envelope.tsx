@@ -46,7 +46,10 @@ export default function Envelope({ isOpen, onOpen }: EnvelopeProps) {
               <div className="absolute inset-0 bg-black/10" />
            </div>
            <p className="font-playfair text-[var(--text-brown)] text-center italic text-xl">
-             "Gracias por compartir tu vida conmigo"
+             "Gracias por estar conmigo"
+           </p>
+           <p className="font-playfair text-[var(--accent-red)] text-center italic text-lg mt-2">
+             Que pases feliz cumpleaños.
            </p>
         </div>
 
