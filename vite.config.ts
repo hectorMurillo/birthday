@@ -5,10 +5,10 @@ import {defineConfig} from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(({ command }) => {
-  // En GitHub Actions (despliegue a GitHub Pages) usa '/canva-qr/'.
+  // En GitHub Actions (despliegue a GitHub Pages) usa '/birthday/'.
   // En AI Studio y desarrollo local usa '/' para que el preview funcione al 100%.
   const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
-  const basePath = process.env.VITE_BASE_PATH || (isGitHubActions ? '/canva-qr/' : '/');
+  const basePath = process.env.VITE_BASE_PATH || (isGitHubActions ? '/birthday/' : '/');
 
   return {
     base: basePath,
